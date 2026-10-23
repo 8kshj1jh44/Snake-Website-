@@ -1,20 +1,31 @@
 # A Dummy's Guide to the Philippine Snakes 🐍
 
-A WordPress website that helps readers identify snakes found in the Philippines — from harmless blind snakes to pit vipers.
+An educational WordPress website that helps readers identify snakes found in the Philippines — from harmless blind snakes to pit vipers — in a beginner-friendly, approachable way.
 
-**Live site:** [identifysnakesinph.freedev.app](https://identifysnakesinph.freedev.app) — hosted on [InfinityFree](https://www.infinityfree.com/).
+**Live site:** [identifysnakesinph.freedev.app](https://identifysnakesinph.freedev.app)
 
 ![Homepage screenshot](Screenshot_5.png)
 
 ## About the project
 
-The site presents Philippine snake species in an approachable, beginner-friendly way, with pages for:
+The Philippines is home to hundreds of snake species, and most people can't tell a harmless one from a dangerous one. This guide presents Philippine snake species in a simple, guided format so anyone can learn the basics — no herpetology background needed.
 
-- **Home** — introduction and getting started
+### Pages
+
+- **Home** — bold, imagery-driven introduction with a guided "Start" flow
 - **About Me** — who is behind the guide
 - **Snakes** — the species guide
 
-It was built with **WordPress** using the **Astra** theme and the **Elementor** page builder.
+## Tech stack
+
+| Layer | Technology |
+| --- | --- |
+| CMS | WordPress |
+| Theme | Astra |
+| Page builder | Elementor |
+| Languages | PHP, HTML/CSS |
+| Local dev | Docker Compose (WordPress + MySQL 8.0) |
+| Hosting | [InfinityFree](https://www.infinityfree.com/) |
 
 ## Repository contents
 
@@ -41,17 +52,24 @@ The stack includes:
 - **wordpress** — WordPress (latest), exposed on port `8080`
 - **db** — MySQL 8.0, database `wordpress`, user `wordpress`
 
-> These credentials are for local development only.
+> Credentials in `compose.yaml` are for local development only.
 
 Data is persisted in the `wordpress_data` and `db_data` named volumes, so content survives container restarts:
 
 ```bash
-docker compose down   # stops the stack, keeps volumes
-docker compose down -v  # stops and removes all data
+docker compose down      # stops the stack, keeps volumes
+docker compose down -v   # stops and removes all data
 ```
+
+## Deployment
+
+The live site is hosted on [InfinityFree](https://www.infinityfree.com/) free hosting. Content is managed through the WordPress admin; the Docker stack mirrors the environment locally so changes can be tested before they're applied to production.
 
 ## Author
 
-Built by [Franz Lyster L. Tagalogon](https://github.com/8kshj1jh44).
+Built by [Franz Lyster L. Tagalogon](https://github.com/8kshj1jh44) — full-stack web developer & WordPress specialist.
+
+- Portfolio: [franz-portfolio-psi.vercel.app](https://franz-portfolio-psi.vercel.app)
+- GitHub: [8kshj1jh44](https://github.com/8kshj1jh44)
 
 Cheers to more websites! <3
